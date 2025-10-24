@@ -1,19 +1,19 @@
 from alarm import Alarm
 
 import time
-from monitor import hamta_cpu_anvandning, hamta_minnesanvandning, hamta_diskanvandning
+from monitor import hämta_cpu_anvandning, hämta_minnesanvändning, hämta_diskanvändning
 larm_lista = []
 
 
-def starta_overvakningslage():
+def starta_övervakningslage():
     print("\n🔍 Övervakningsläge startat.")
     print("Tryck Ctrl + C för att avbryta och återgå till huvudmenyn.\n")
 
     try:
         while True:
-            cpu = hamta_cpu_anvandning()
-            mem_procent, _, _ = hamta_minnesanvandning()
-            disk_procent, _, _ = hamta_diskanvandning()
+            cpu = hämta_cpu_användning()
+            mem_procent, _, _ = hämta_minnesanvändning()
+            disk_procent, _, _ = hämta_diskanvändning()
 
             print("Systemet övervakas...")
 
@@ -112,10 +112,10 @@ def huvudmeny():
             print("Ogiltigt val. Försök igen.")
 
 
-def visa_overvakning():
-    cpu = hamta_cpu_anvandning()
-    mem_procent, mem_anvant, mem_total = hamta_minnesanvandning()
-    disk_procent, disk_anvant, disk_total = hamta_diskanvandning()
+def visa_övervakning():
+    cpu = hämta_cpu_användning()
+    mem_procent, mem_anvant, mem_total = hämta_minnesanvändning()
+    disk_procent, disk_anvant, disk_total = hämta_diskanvändning()
 
     print(f"\nCPU Användning: {cpu}%")
     print(
@@ -128,3 +128,4 @@ def visa_overvakning():
 
 # Starta programmet
 huvudmeny()
+
